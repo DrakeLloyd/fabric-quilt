@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+/* -------------------------------------
+   Basic Page Styling 
+-------------------------------------- */
+body {
+  font-family: Arial, sans-serif;
+  background-color: rgb(255,255,255);
+  margin: 0;
+  padding: 20px;
+}
+
+/* -------------------------------------
+   Header Styling (Logo and Title)
+-------------------------------------- */
+#header {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center the title horizontally */
+  margin-bottom: 20px;
+}
+
+#header a {
+  align-self: flex-start; /* Align the logo to the left */
+}
+
+#header img {
+  height: 50px; /* Adjust the size of the logo */
+  margin-left: 20px; /* Add margin for spacing from the left */
+}
+
+#header h1 {
+  text-align: center; /* Center the title below the logo */
+  margin-top: 50px;
+  font-size: 35px;
+  color: #0a2972;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  background-color: white;
+  max-width: 600px;
+  width: 100%; /* Ensure it fills the parent container */
+  margin: 50px auto;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Larger shadow */
+
+}
+
+.grid-box {
+  background-color: #e0e0e0;
+  /* border: .5px solid #333;*/
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: transform 0.3s ease, background-color 0.3s ease; /* Smooth scaling effect */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  overflow: hidden;
+  z-index: 1; /* Default z-index */
+}
+
+.grid-box:hover {
+  transform: scale(1.1); /* Scale up the box by 10% on hover */
+  z-index: 10; /* Increase z-index on hover to bring the box to the front */
+}
+
+.grid-box::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent overlay */
+  opacity: 0;
+  transition: opacity 0.3s ease; /* Fade-in effect */
+}
+
+.grid-box:hover::before {
+  opacity: 1;
+}
+
+.grid-box span {
+  position: absolute;
+  color: white;
+  font-size: 18px;
+  font-weight: bold;
+  text-transform: uppercase;
+  opacity: 0; /* Initially hidden */
+  transition: opacity 0.3s ease; /* Smooth transition */
+  text-align: center; /* Ensure text is centered horizontally */
+  white-space: normal; /* Allow text to break into multiple lines */
+  padding: 10px; /* Add padding to avoid text touching the edges */
+}
+
+.grid-box:hover span {
+  opacity: 1; /* Show text on hover */
+}
+
+
+#box1 {
+  background-image: url('images/cotton-100.jpg');
+}
+
+#box2 {
+  background-image: url('images/polyester.jpg');
+}
+
+#box3 {
+  background-image: url('images/cotton-polyester.jpg');
+}
+
+#box4 {
+  background-image: url('images/cotton-ringspun.jpg');
+}
+
+#box5 {
+  background-image: url('images/tri-blend.jpg');
+}
+
+#box6 {
+  background-image: url('images/rayon.jpg');
+}
+
+#box7 {
+  background-image: url('images/spandex.jpeg');
+}
+
+#box8 {
+  background-image: url('images/cotton-combed.jpg');
+}
+
+#box9 {
+  background-image: url('images/recycled.jpg');
+}
+
+/* Info Box Styling */
+.info-box {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  max-width: 600px;
+  width: 100%;
+  margin: 20px auto;
+  padding: 20px;
+  font-size: 16px;
+  text-align: left; /* Left-align the text */
+  display: none;
+  transition: opacity 0.5s ease;
+  line-height: 1.6; /* Add more line height for readability */
+}
+
+/* Add space between headers and paragraphs */
+.info-box h2,
+.info-box h4 {
+  margin-bottom: 15px; /* Add space below headers */
+}
+
+.info-box p {
+  margin-bottom: 15px; /* Add space below paragraphs */
+  text-indent: 20px; /* Indent the first line of each paragraph */
+}
+
+.info-box ul {
+  margin-bottom: 15px; /* Add space below unordered list */
+  padding-left: 20px; /* Add padding to indent list items */
+}
+
+.info-box li {
+  margin-bottom: 10px; /* Add space between list items */
+}
+
+/* -------------------------------------
+   Linked Text Styling (T-shirt Titles)
+-------------------------------------- */
+a {
+  text-decoration: none; /* Remove the underline */
+  color: #0a2972; /* Set the initial link color */
+}
+
+a:hover {
+  color: #007aff; /* Change color on hover */
+}
